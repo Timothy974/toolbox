@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+body {
+   background-color: #2B1919;
+}
+
+header {
+   /* background-color: #381f1f; */
+   background: url(./img/sunny.jpg) no-repeat center/cover;
+   display: flex;
+   justify-content: space-between;
+}
+
+main {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+/***** CLOCK *****/
+
+.clock {
+   margin: 1rem;
+   border-radius: 50%;
+   height: 10rem;
+   width: 10rem;
+   background: #decece;
+   box-shadow: inset -8px -8px 10px #8c8282,
+      inset 8px 8px 10px #ffffff;
+}
+
+.wrap {
+   height: 10rem;
+   width: 10rem;
+   position: relative;
+
+}
+
+.minutes,
+.hours {
+   position: absolute;
+   height: 3.8rem;
+   width: 0.4rem;
+   top: -40%;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   margin: auto;
+   background-color: black;
+   border-radius: 10px;
+   transform-origin: bottom center;
+   transform: rotate(0deg);
+   box-shadow: 0 0 8px rgb(134, 77, 77);
+}
+
+.minutes {
+   height: 4.5rem;
+   width: 0.2rem;
+   top: -45%;
+}
+
+.seconds {
+   position: absolute;
+   height: 4rem;
+   width: 0.1rem;
+   top: -45%;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   margin: auto;
+   background-color: rgb(160, 118, 118);
+   border-radius: 10px;
+   transform-origin: bottom center;
+   transform: rotate(0deg);
+   box-shadow: 0 0 8px rgb(134, 77, 77);
+}
+
+.dot {
+   position: absolute;
+   height: 0.8rem;
+   width: 0.8rem;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   margin: auto;
+   background-color: rgb(155, 14, 14);
+   border-radius: 50%;
+}
+
+/***** WEATHER WIDGET *****/
+
+.meteoWidget {
+   position: relative;
+   width: auto;
+   height: 10rem;
+   text-shadow: 1px 1px 2px #2B1919;
+   margin: 1rem;
+   padding: 1rem;
+   display: flex;
+   align-items: center;
+   /* background-color: #2B1919;
+   border-radius: 36px;
+   background: #2B1919;
+   box-shadow: inset -7px 7px 14px #201313,
+               inset 7px -7px 14px #361f1f; */
+   color: rgb(247, 224, 224);
+}
+
+.info {
+   font-size: 1.5rem;
+}
+
+.tooltip {
+   position: absolute;
+   width: 80%;
+   height: auto;
+   top: 0;
+   left: 30px;
+   opacity: 0;
+   color: white;
+   font-size: 14px;
+   background-color: rgb(0, 0, 0);
+   border-radius: 5px;
+   padding: 10px;
+   transition: opacity .3s, top .5s;
+}
+
+h1:hover .tooltip {
+   opacity: 1;
+   top: 0px;
+   left: 30px;
+}
+
+.meteoWidget i {
+   font-size: 100px;
+   margin-right: 1rem;
+}
+
+/***** CALCULATOR *****/
+
+.calculator {
+   width: 15rem;
+   margin: 1rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 1rem;
+   border-radius: 10px;
+   background: #4e3030;
+   box-shadow: 8px 8px 16px #241515,
+      -8px -8px 16px #321d1d;
+}
+
+.screen {
+   height: 5rem;
+   width: 100%;
+   margin-bottom: 1rem;
+   background-color: blanchedalmond;
+   border-radius: 5px;
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+   padding: 0.4rem;
+   font-size: 25px;
+   font-family: 'Roboto', sans-serif;
+   box-shadow: inset 8px 8px 9px #8a8080,
+      inset -8px -8px 9px #ffffff;
+
+}
+
+.touches {
+   display: grid;
+   grid-template-columns: repeat(4, 50px);
+   grid-template-rows: repeat(5, 50px);
+   column-gap: 0.4rem;
+   row-gap: 0.4rem;
+}
+
+button {
+   border-radius: 10px;
+   border: none;
+   outline: none;
+   background: #444040;
+   box-shadow: inset -7px -7px 14px #2d2a2a,
+      inset 7px 7px 14px #5b5656;
+   font-size: 25px;
+   font-family: 'Roboto', sans-serif;
+}
+
+button:active {
+   transform: translateY(2px);
+   background: #444040;
+   box-shadow: -7px -7px 14px #2d2a2a,
+      7px 7px 14px #5b5656;
+}
+
+button[data-key="8"] {
+   background-color: #c21f1f;
+   color: white;
+}
+
+button[data-key="13"] {
+   grid-column: span 2;
+   background-color: #36e700;
+   font-size: 35px;
+   color: white;
+}
+
+/***** PASSWORD GENERATOR *****/
+
+.passwordGenerator {
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   width: 21rem;
+   margin: 1rem;
+   padding: 1rem;
+   border-radius: 15px;
+   background: #2A1A1D;
+   box-shadow: inset -35px -35px 70px #1f1315,
+      inset 35px 35px 70px #352125;
+
+
+}
+
+#generateButton {
+   margin: 0.7rem;
+   padding: 0.7rem;
+   font-size: 15px;
+   color: #DECECE;
+   border-radius: 10px;
+   background: #444040;
+   box-shadow: inset -7px -7px 14px #2d2a2a,
+      inset 7px 7px 14px #5b5656;
+}
+
+.choice-box {
+   width: 100%;
+   margin: 1rem;
+   display: flex;
+   justify-content: space-around;
+}
+
+.choice-box input {
+   display: none;
+}
+
+.choice-box input:checked+label {
+   background-color: #DECECE;
+   color: #2B1919;
+   transform: scale(1.1);
+}
+
+.password-choice {
+   width: 3rem;
+   color: #DECECE;
+   cursor: pointer;
+   text-align: center;
+   padding: 0.5rem;
+   margin: 0.5rem;
+   border: 2px solid #DECECE;
+   border-radius: 5px;
+}
+
+.password-choice:hover {
+   box-shadow: 0 0 5px #DECECE;
+}
+
+.range-box {
+   width: auto;
+   display: flex;
+   justify-content: center;
+   margin: 1.2rem 0;
+}
+
+#display-password-length {
+   background: none;
+   border: none;
+   color: #DECECE;
+   text-align: center;
+   font-size: 20px;
+}
+
+input#display-password-length {
+   width: 20%;
+}
+
+#password-output {
+   background: none;
+   border: none;
+   color: #DECECE;
+   text-align: center;
+   font-size: 20px;
+   width: 30rem
+
+}
+
+input#password-output {
+   outline: none;
+}
+
+/***** MONEY CONVERTER *****/
+
+.moneyConverter {
+   font-family: 'Roboto', sans-serif;
+   font-size: 25px;
+   padding: 1rem;
+   margin: 2rem;
+   color: #DECECE;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border-radius: 10px;
+   background: #2B1919;
+   box-shadow: inset -35px -35px 70px #201313,
+               inset 35px 35px 70px #362020;
+
+}
+
+.moneyConverter * {
+   margin: 0.5rem 0;
+   outline: none;
+}
+
+.moneyConverter h1 {
+   font-size: 25px;
+}
+
+/***** KEYCODE GENERATOR *****/
+
+.keyCodeGenerator{
+   color : #DECECE;
+   font-family: 'Roboto', sans-serif;
+   padding: 2rem;
+   margin: 1rem;
+   text-align: center;
+   border-radius: 10px;
+   background: #2B1919;
+   box-shadow: inset 9px 9px 9px #231515,
+               inset -9px -9px 9px #331e1e;
+}
+
+.keyPressed, .keyCode {
+   font-size: 50px;
+}
+
+.keyCodeGenerator p {
+   font-size: 20px;
+   margin-bottom: 1rem;
+}
+.keyCodeGenerator h1 {
+   margin-bottom: 1rem;
+   font-size: 20px;
+}
+.keyCodeGenerator h2 {
+   font-size: 20px;
+   margin-bottom: 2rem;
+}
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css' integrity='sha512-Fdq8QvrEd3TD4heN8gNTOl79sAZR7zsiHIDQbE5eEBxx8pPfb/yJHaBWxhoG7SNcQiBmrrUHlg5TiNX4ovt6Jg==' crossorigin='anonymous'/>
+		<link rel="stylesheet" href="style.css">
+		<title>My Tools Dashboard</title>
+	</head>
+
+	<body>
+		<header>
+
+			<!-- CLOCK -->
+			<div class="clock">
+				<div class="wrap">
+					<div class="hours"></div>
+					<div class="minutes"></div>
+					<div class="seconds"></div>
+					<div class="dot"></div>
+				</div>
+			</div>
+
+			<!-- WEATHER WIDGET -->
+
+			<div class="meteoWidget" id="meteoApp">
+				<i class="wi"></i>
+				<div class="info">
+					<h1>
+						<span id="ville"></span>
+						<span class="tooltip">Entrez une autre ville</span>
+					</h1>
+					<p>
+						<span id="temperature"></span>
+						°C</p>
+
+					<p id="conditions"></p>
+				</div>
+			</div>
+		</header>
+
+		<main>
+
+			<!-- CALCULATOR -->
+			<div class="calculator">
+				<div class="screen"></div>
+				<div class="touches">
+					<button data-key="8" class="button">C</button>
+					<button data-key="53" class="button">(</button>
+					<button data-key="219" class="button">)</button>
+					<button data-key="111" class="button">/</button>
+					<button data-key="103" class="button">7</button>
+					<button data-key="104" class="button">8</button>
+					<button data-key="105" class="button">9</button>
+					<button data-key="106" class="button">*</button>
+					<button data-key="100" class="button">4</button>
+					<button data-key="101" class="button">5</button>
+					<button data-key="102" class="button">6</button>
+					<button data-key="109" class="button">-</button>
+					<button data-key="97" class="button">1</button>
+					<button data-key="98" class="button">2</button>
+					<button data-key="99" class="button">3</button>
+					<button data-key="107" class="button">+</button>
+					<button data-key="96" class="button">0</button>
+					<button data-key="110" class="button">.</button>
+					<button data-key="13" class="button">=</button>
+				</div>
+			</div>
+
+			<!-- PASSWORD GENERATOR -->
+
+			<div class="passwordGenerator" id="password-generator">
+				<input value="Générateur de MDP" id="password-output">
+				<div class="range-box">
+					<input type="range" min="4" max="24" step="1" value="8" id="password-length" oninput="document.getElementById('display-password-length').value = this.value">
+					<input type="text" value="8" maxlength="2" id="display-password-length" oninput="document.getElementById('password-length').value = this.value">
+				</div>
+				<div class="choice-box">
+					<input type="checkbox" id="lowercase" checked="checked">
+					<label for="lowercase" class="password-choice">a-z</label>
+					<input type="checkbox" id="uppercase">
+					<label for="uppercase" class="password-choice">A-Z</label>
+					<input type="checkbox" id="numbers">
+					<label for="numbers" class="password-choice">0-9</label>
+					<input type="checkbox" id="symbols">
+					<label for="symbols" class="password-choice">?-!</label>
+				</div>
+				<button type="button" id="generateButton" onclick="generatePassword()">GENERATE</button>
+			</div>
+
+			<!-- MONEY CONVERTER -->
+
+			<div class="moneyConverter">
+				<h1>Convertisseur monnaie</h1>
+				<label for="valeur-depart">Montant</label>
+				<input type="number" id="valeur-depart">
+
+				<label for="taux-comparaison">Vers</label>
+				<select id="taux-comparaison"></select>
+
+				<p class="taux-de-comparaison"></p>
+
+				<p class="resultats">1 euro = 1.5 $ CAD</p>
+			</div>
+
+			<!-- KEYCODE GENERATOR -->
+
+			<div class="keyCodeGenerator">
+				<h1>keyCode Generator</h1>
+				<h2>Appuyez sur une touche</h2>
+				<div class="keyCodeResult">
+					<p>Touche :
+						<br>
+						<span class="keyPressed">l</span>
+					</p>
+					<p>KeyCode :
+						<br>
+						<span class="keyCode">76</span>
+					</p>
+				</div>
+			</div>
+
+		</main>
+
+		<script src="index.js"></script>
+	</body>
+
+</html>
