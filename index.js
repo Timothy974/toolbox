@@ -43,8 +43,8 @@ const weatherPic = {
 
 function weatherWidget(withIP = true) {
 
-   let ipApiKey = '59a0317d6bdf413ea5fb95aae60d92c1';
-   let openWeatherApiKey = '60f959e6d7f0da264048bfbe76f1585e';
+   let ipApiKey = /* here your ApiKey from https://api.ipgeolocation.io/ or use an other api */ ;
+   let openWeatherApiKey = /* here your ApiKey from https://api.openweathermap.org or use an other api */ ;
    let city = document.querySelector('#ville').textContent;
 
    if (withIP) {
@@ -199,7 +199,7 @@ const resultatsAffichage = document.querySelector('.resultats');
 let options = [];
 let valeurSelect;
 let tauxEnCours;
-let exchangeRateApiKey = '903b9211b50b6232372a09b5cb6c708c';
+let exchangeRateApiKey = '/* here your ApiKey from http://api.exchangeratesapi.io or use an other api */';
 valDepart.value = 1;
 
 fetch("http://api.exchangeratesapi.io/v1/latest?access_key=" + exchangeRateApiKey)
